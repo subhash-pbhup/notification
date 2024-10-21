@@ -26,15 +26,6 @@
         const analytics = getAnalytics(app);
         const messaging = getMessaging(app);
 
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/notification/firebase-messaging-sw.js', { scope: '/notification/' })
-    .then((registration) => {
-      console.log('Service Worker registered successfully with scope:', registration.scope);
-    })
-    .catch((error) => {
-      console.error('Service Worker registration failed:', error);
-    });
-}
 
             
             Notification.requestPermission().then((permission) => {
