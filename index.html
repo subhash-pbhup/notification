@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Page Title</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+        <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js";
+        import {getMessaging, getToken, onMessage } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-messaging.js";
+
+        const firebaseConfig = {
+          apiKey: "AIzaSyAETpT7RzfSU9nhRTsX3dQDxTUOb-1cNV4",
+          authDomain: "test-f8ca0.firebaseapp.com",
+          projectId: "test-f8ca0",
+          storageBucket: "test-f8ca0.appspot.com",
+          messagingSenderId: "244259946058",
+          appId: "1:244259946058:web:5748847d9a796463da70b3",
+          measurementId: "G-BGR4SND4RN"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const messaging = getMessaging(app);
+
+
+            
+            Notification.requestPermission().then((permission) => {
+  if (permission === 'granted') {
+    console.log('Notification permission granted.');
+    // Get the device's registration token
+    getToken(messaging, { vapidKey: 'BBJCmyIoUKSzJ7HkWPMNdhNQzpzvICzNZjRPng1QkFwanjRp8QHdrWZU272wK812anA5Y5jaTMWmA-gC1mvNKig' }).then((currentToken) => {
+      if (currentToken) {
+        console.log('FCM Token:', currentToken);
+        // Send this token to your backend server for push notifications
+      } else {
+        console.log('No registration token available.');
+      }
+    }).catch((err) => {
+      console.log('An error occurred while retrieving token.', err);
+    });
+  } else {
+    console.log('Unable to get permission to notify.');
+  }
+});
+
+    
+      </script>
+    </head>
+    <body>
+        <h1>Hellof</h1>
+    </body>
+</html>
