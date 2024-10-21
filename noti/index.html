@@ -5,12 +5,11 @@
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
         <title>Page Title</title>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
-
-        <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js";
-        import {getMessaging, getToken, onMessage } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-messaging.js";
-
+        <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-messaging.js"></script>
+        <script>
+       
         const firebaseConfig = {
           apiKey: "AIzaSyAETpT7RzfSU9nhRTsX3dQDxTUOb-1cNV4",
           authDomain: "test-f8ca0.firebaseapp.com",
@@ -24,9 +23,7 @@
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const analytics = getAnalytics(app);
-        const messaging = getMessaging(app);
-
-
+        const messaging = getMessaging(app);        
             
             Notification.requestPermission().then((permission) => {
   if (permission === 'granted') {
@@ -51,6 +48,6 @@
       </script>
     </head>
     <body>
-        <h1>Hellof</h1>
+        <h1>Hello</h1>
     </body>
 </html>
