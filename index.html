@@ -26,7 +26,7 @@
         const analytics = getAnalytics(app);
         const messaging = getMessaging(app);
 
-
+navigator.serviceWorker.register('firebase-messaging-sw.js', { scope: '/public_html/' })
             
             Notification.requestPermission().then((permission) => {
   if (permission === 'granted') {
