@@ -23,7 +23,22 @@
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const analytics = getAnalytics(app);
+<<<<<<< HEAD:noti/index.html
         const messaging = getMessaging(app);        
+=======
+        const messaging = getMessaging(app);
+
+
+            navigator.serviceWorker.register('firebase-messaging-sw.js')
+  .then((registration) => {
+    console.log('Service Worker registered with scope:', registration.scope);
+  })
+  .catch((error) => {
+    console.error('Service Worker registration failed:', error);
+  });
+
+
+>>>>>>> 79948179cb4aabc250ef0a20cbfc034fda2d11f8:index.html
             
             Notification.requestPermission().then((permission) => {
   if (permission === 'granted') {
