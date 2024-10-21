@@ -27,7 +27,7 @@
         const messaging = getMessaging(app);
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('firebase-messaging-sw.js', { scope: '/' })
+  navigator.serviceWorker.register('/notification/firebase-messaging-sw.js', { scope: '/notification/' })
     .then((registration) => {
       console.log('Service Worker registered successfully with scope:', registration.scope);
     })
